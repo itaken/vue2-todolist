@@ -20,12 +20,12 @@ export default {
     data () {
         return {
             todoItem: "",
-            items: Storage.fetch()
+            items: Storage.fetch()  // 通过 localstorage 获取数据
         }
     },
     methods:{
         createTodo(){
-            var name = this.todoItem.trim();
+            var name = this.todoItem.trim();  // 去除空格
             if(name == ""){
                 this.todoItem = "";
                 return;
@@ -35,9 +35,10 @@ export default {
                 name: name,
                 isFinish: false
             });
-            this.todoItem = "";
+            this.todoItem = "";  // 清空 输入框
         },
         toggleFinish(item){
+            // 已完成 -> 未完成,  未完成 -> 已完成
             item.isFinish = !item.isFinish;
         },
         delTodo(index, item){
@@ -54,12 +55,12 @@ export default {
             }
         }
     },
-    watch:{
+    watch:{  // 监控 数据
         items:{
             handler: function(items){
                 Storage.save(items);
             },
-            deep: true
+            deep: true  // 深度
         }
     }
 }
