@@ -7,7 +7,7 @@
       <div class="todo-list">
           <ul>
               <li v-for="(item, index) in items" :class="{finished: item.isFinish}" @click="toggleFinish(item)" @dblclick="delTodo(index, item)">
-                  &nbsp;{{ item.name }}&nbsp;
+                  {{ item.name }}
               </li>
           </ul>
       </div>
@@ -68,11 +68,14 @@ export default {
 <style lang="scss" scoped>
     .container{
         // padding: 2em 1em 0;
-        font-family: yahei;
+        font-family: 微软雅黑,arial;
     }
     .todo-head{
-        background-color: #f1ffff;
-        padding: 35px 20px 15px 20px;
+        padding: 25px 10px 15px 12px;
+        border-bottom: 1px solid #ccc;
+        margin: 0 0 15px 0;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+        background: #f6f6f6;
         span{
             color: #3d4f5d;
             font-size: 1.6em;
@@ -84,26 +87,31 @@ export default {
             border: 1px solid #607D8B;
             padding: 2px 6px;
             font-size: 1.5em;
+            height: 38px;
             &:hover, &:focus, &:active{
                 border: 1px solid #00BCD4;
             }
         }
     }
+    // 任务列表 样式
     .todo-list{
         user-select:none;
         ul{
             margin: 0;
             padding: 0;
             li{
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                border-radius: 6px;
+                box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
                 cursor: pointer;
                 list-style: none;
-                color: #E91E63;
-                font-size: 1.2em;
-                margin-bottom: 3px;
-                padding: 1px 15px 1px 15px;
+                color: #3d4f5d;
+                font-size: 2.2em;
+                margin: 4px 8px 10px 10px;
+                padding: 1px 15px 10px 15px;
                 &:hover{
-                    background-color: #E91E63;
-                    color: #fff;
+                    background-color: #f6f6f6;
+                    color: #E91E63;
                 }
             }
         }

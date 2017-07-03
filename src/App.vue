@@ -101,19 +101,24 @@ export default {
 
             .header{
                 bottom: 0px;
-                padding: .5em .5em;
                 float: right;
+                width: 100%;
+                bottom: 0px;
+                margin-top: 30%;
+
                 h1, h2, a{
                     float: right;
                     display: block;
-                    margin-bottom: .5em;
+                    margin: .5em .5em;
                 }
                 .brand-title{
                     background: #fff;
                     color: #3d4f5d;
-                    padding: .3em .1em;
-                    width: 95%;
-                    text-align: center;
+                    padding: .3em .3em;
+                    width: 100%;
+                    text-align: right;
+                    margin: 0;
+                    background-color: #f6f6f6;
                 }
             }
             @at-root{
